@@ -95,6 +95,11 @@ class Enemy {
     if (this.gone) return;
     this.x -= this.x_speed;
     this.y += this.y_speed;
+    if (this.creek.get("physics").collide(this, this.creek.get("player"))) {
+      this.creek.get("player").health -= 1;
+      this.gone = true;
+      this.creek.get("audio").play("slash");
+    }
     if (this.x < -(this.x_size + 10)) {
       this.gone = true;
     }

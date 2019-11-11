@@ -37,6 +37,7 @@ class Creek {
       if (module.init && !module.has_done_init) {
         module.init(this);
         module.has_done_init = true;
+        this.modules[external_module_name] = module;
       }
     }
 

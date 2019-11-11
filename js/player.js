@@ -11,7 +11,7 @@ class Player {
     this.previous = [];
     this.previous_check = {};
     this.palette = palette;
-    this.max_health = 5;
+    this.max_health = 10;
     this.health = this.max_health;
   }
 
