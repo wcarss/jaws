@@ -34,26 +34,15 @@ class Player {
 
     let player = this.creek.get("resources").get_image("player");
     context.fillStyle = "red";
-    context.fillRect(
-      this.x * this.x_size,
-      this.y * this.y_size,
-      this.x_size,
-      6
-    );
+    context.fillRect(this.x, this.y + 42, this.x_size, 6);
     context.fillStyle = "#00ff00";
     context.fillRect(
-      this.x * this.x_size,
-      this.y * this.y_size,
+      this.x,
+      this.y + 42,
       this.x_size * (this.health / this.max_health),
       6
     );
-    context.drawImage(
-      player.img,
-      this.x * this.x_size,
-      this.y * this.y_size,
-      this.x_size,
-      this.y_size
-    );
+    context.drawImage(player.img, this.x, this.y, this.x_size, this.y_size);
   }
 
   update(creek) {
@@ -63,7 +52,7 @@ class Player {
 
     let new_x = this.x;
     let new_y = this.y;
-    let move_distance = 1;
+    let move_distance = (this.x_size * 2) / 3;
     let vdir = null;
     let hdir = null;
     let prev_check = null;
