@@ -201,7 +201,7 @@ class Resources {
       "<div style='width: 20%; margin: 20% auto;'>Click to play!</div>";
 
     const listener = () => {
-      this.creek.get("audio").play("cave_hopping");
+      //this.creek.get("audio").play("cave_hopping");
       sound_trigger.removeEventListener("click", listener);
       sound_trigger.parentNode.removeChild(sound_trigger);
     };
